@@ -1,0 +1,417 @@
+{% load static %}
+<link rel = "stylesheet" href="{% static 'css/index.css' %}">
+
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--==Title==================================-->
+<title>Blog</title>
+
+<!--Stylesheet===============================-->
+{% comment %} <link rel="stylesheet" href="index.css"> {% endcomment %}
+
+<!--==fav-icon===============================-->
+{% comment %} <img src = "{% static 'images/fav-icon.png' %}"> {% endcomment %}
+{% comment %} <img rel="shortcut icon" href="{% static 'images/fav-icon.png' %}"> {% endcomment %}
+
+<!--==Import-poppins-font-family=============-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+<!--==Scroll-bar-script======================-->
+<!-- <script src="{% static 'js/scroll.js' %}"></script> -->
+<script>
+    let scrollPercentage = () => {
+        let scrollProgress = document.getElementById("progress");
+        let progressValue = document.getElementById("progress-value");
+        let pos = document.documentElement.scrollTop;
+        let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrollValue = Math.round( pos * 100 / calcHeight);
+        scrollProgress.style.background = `conic-gradient(#e2d30c ${scrollValue}%, #2b2f38 ${scrollValue}%)`;
+        progressValue.textcontent = `${scrollValue}%`;
+
+    }
+    window.onscroll = scrollPercentage;
+    window.onload = scrollPercentage;
+</script>
+
+</head>
+
+<body>
+
+    <!--==Page-Scroll-progress-bar==============-->
+    <div id="progress">
+        <span id="progress-value"></span>
+    </div>
+
+
+    <!--==navigation=============================-->
+    <nav class="navigation">
+
+        <!--logo------------>
+        <a href="#" class="logo">Wise</a>
+
+        <!--menu-btn-------->
+        <input type="checkbox" class="menu-btn" id="menu-btn">
+        <label for="menu-btn" class="menu-icon">
+            <span class="nav-icon"></span>
+        </label>
+
+        <!--menu------------>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contactme.html" class="nav-contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!--==page-container========================================-->
+    <div class="page-container">
+
+        <!--==top-bar=============================-->
+        <div class="top-bar">
+            <span>wise/<br/>Blog</span>
+            <div class="article-number"><span>37</span><br/>Article</div>
+        </div>
+
+
+        <!--==Blog-Section=========================-->
+        <section id="blog">
+
+            <!--heading------------->
+            <div class="blog-heading">
+                <h1>Wisdom, Wise, and virtue for life.</h1>
+            </div>
+
+            <!--filter-------------->
+            <ul class="blog-filter">
+                <li class="list blog-filter-active" data-filter="all">All</li>/
+                <li class="list" data-filter="stoic">stoic</li>/
+                <li class="list" data-filter="projects">projects</li>/
+                <li class="list" data-filter="Wisdom">Wisdom</li>/
+                <li class="list" data-filter="Self-help">Self-help</li>/
+                <li class="list" data-filter="Philosophy">Philosophy</li>/
+                <li class="list" data-filter="Tech">Tech</li>/
+                <li class="list" data-filter="Tech">Others</li>
+            </ul>
+
+
+
+            <!--blog-box-container------------------>
+            <div class="blog-container">
+
+                <!--box-1-------->
+                <a href="#" class="blog-box stoic">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-1.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">stoic</span>
+                        <strong>Has covid eased some divisions?</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+
+                <!--box-2-------->
+                <a href="#" class="blog-box projects">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-2.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">project</span>
+                        <strong>Inspiring media agencies and brands to use TikTok</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+
+                <!--box-3-------->
+                <a href="#" class="blog-box stoic">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-3.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">stoic</span>
+                        <strong>Talent pool: Need better staff? Get better principles.</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+
+                <!--box-4-------->
+                <a href="#" class="blog-box culture">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-4.png' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">NB culture</span>
+                        <strong>Our sustainability journey</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+
+                <!--box-5-------->
+                <a href="#" class="blog-box Self-help">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-5.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">Self-help</span>
+                        <strong>Inspiring media agencies and brands to use TikTok</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+                <!--box-6-------->
+                <a href="#" class="blog-box culture">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/blog-6.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">NB culture</span>
+                        <strong>Talent pool: Need better staff? Get better principles.</strong>
+                        <span class="blog-post-time">June 9 - 5 min read</span>
+                    </div>
+
+                </a>
+
+                <!--box-7-------->
+                <a href="Firstblog.html" class="blog-box stoic">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/ms.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">stoic</span>
+                        <strong>About a great stoic man.</strong>
+                        <span class="blog-post-time">Aug 24 - 15 min read</span>
+                    </div>
+
+                </a>
+
+                <!--box-8-------->
+                <a href="#" class="blog-box Philosophy">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/seneca.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">Philosophy</span>
+                        <strong>About a great empire of roman times.</strong>
+                        <span class="blog-post-time">Oct 10 - 37 min read</span>
+                    </div>
+                </a>
+
+                <!--box-9-------->
+                <a href="#" class="blog-box Philosophy">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/ryan.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">Philosophy</span>
+                        <strong>One of my favourite author whom i admire the most</strong>
+                        <span class="blog-post-time">June 19 - 15 min read</span>
+                    </div>
+                </a>
+
+                <!--box-10-------->
+                <a href="secondblog.html" class="blog-box Tech">
+
+                    <!--img--->
+                    <div class="blog-img">
+                        <img src="{% static 'images/windows-11.jpg' %}" alt="1">
+                    </div>
+
+                    <!--text-->
+                    <div class="blog-text">
+                        <span class="category">Tech</span>
+                        <strong>Microsoft just launched new operating system !</strong>
+                        <span class="blog-post-time">October 19 - 10 min read</span>
+                    </div>
+
+                </a>
+
+            </div>
+            
+
+        </section>
+
+
+    </div>
+    <!--page-container-end--------------------->
+
+
+
+
+    <!--footer=========================================-->
+    <footer>
+        <div class="footer-container">
+
+            <!--heading----------------->
+            <div class="footer-heading">
+
+                <h4>It's time to stop scrolling.
+                    <br/>
+                    And start implementing.
+                </h4>
+
+                <h3>get in touch.</h3>
+
+            </div>
+
+
+            <!--footer-content----------------------------->
+            <div class="footer-content">
+
+                <!--box------------->
+                <div class="footer-box">
+                    <strong>explore</strong>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <!-- <li><a href="#">Project</a></li> -->
+                        <li><a href="contactme.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!--box------------->
+                <div class="footer-box">
+                    <strong>Social</strong>
+                    <ul>
+                        <li><a href="feedback.html">FeedBack</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                    </ul>
+                </div>
+
+                <!--box------------->
+                <div class="footer-box">
+                    <strong>Contact</strong>
+                    <ul>
+                        <li><a href="#">hi@GTN.io</a></li>
+                        <li><a href="#">+123456789</a></li>
+                    </ul>
+                </div>
+
+                <!--box------------->
+                <div class="footer-box">
+                    <strong>GTN.io</strong>
+                    <ul>
+                        <li>manteuffelstr.60b</li>
+                        <li>l0qqq berlin</li>
+                        <li>germany</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!--footer-bottom------------->
+            <div class="footer-bottom">
+
+                <!--links----->
+                <div class="footer-bottom-link">
+                    <a href="#">privacy</a>
+                    <a href="#">site info</a>
+                    <a href="#">terms</a>
+                </div>
+
+                <!--copyright-->
+                <div class="copyright">
+                    <span>Made by GTI</span>
+                    <span>© 2021 GTN</span>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!--==JQuery=================================-->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!--==Script=================================-->
+    <script type="text/javascript">
+    
+        $(document).on('click','.blog-filter li', function(){
+            $(this).addClass('blog-filter-active').siblings().removeClass('blog-filter-active')
+        });
+
+        /*--filter------------------------*/
+        $(document).ready(function(){
+            $('.list').click(function(){
+                const value = $(this).attr('data-filter');
+                if(value == 'all'){
+                    $('.blog-box').show('1000');
+                }
+                else{
+                    $('.blog-box').not('.'+value).hide('1000');
+                    $('.blog-box').filter('.'+value).show('1000');
+                }
+            });
+        });
+    
+    </script>
+
+<!-- The page will go to top when you load or refresh the page -->
+    <script>  
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }; 
+    </script>
+
+</body>
+
+</html>
